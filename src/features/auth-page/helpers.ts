@@ -4,17 +4,19 @@ import { RedirectToPage } from "../common/navigation-helpers";
 import { options } from "./auth-api";
 
 export const userSession = async (): Promise<UserModel | null> => {
-  const session = await getServerSession(options);
-  if (session && session.user) {
+  //const session = await getServerSession(options);
+//  var user = sessionStorage.getItem("user");
+ // const session = await JSON.parse(user!);
+ // if (session && session.user) {
     return {
-      name: session.user.name!,
-      image: session.user.image!,
-      email: session.user.email!,
-      isAdmin: session.user.isAdmin!,
+      name: "Mark",//session.user.name!,
+      image: "", //session.user.image!,
+      email: "admin@mngenvmcap866868.onmicrosoft.com",//session.user.email!,
+      isAdmin: true //session.user.isAdmin!,
     };
-  }
+ // }
 
-  return null;
+  //return null;
 };
 
 export const getCurrentUser = async (): Promise<UserModel> => {
