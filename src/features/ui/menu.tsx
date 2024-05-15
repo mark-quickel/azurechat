@@ -63,7 +63,7 @@ MenuItem.displayName = "MenuItem";
 
 const menuIconProps: LucideProps = {
   size: 24,
-  strokeWidth: 1.6,
+  strokeWidth: 2,
 };
 
 export { Menu, MenuBar, MenuItem, MenuItemContainer, menuIconProps };

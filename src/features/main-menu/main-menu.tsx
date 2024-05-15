@@ -9,7 +9,7 @@ import {
 import {
   Book,
   Home,
-  MessageCircle,
+  MessageCircleCode,
   PocketKnife,
   Sheet,
   VenetianMask,
@@ -17,6 +17,8 @@ import {
 import { getCurrentUser } from "../auth-page/helpers";
 import { MenuLink } from "./menu-link";
 import { UserProfile } from "./user-profile";
+import { NewChat } from "@/features/chat-page/chat-menu/new-chat";
+import { CreateChatAndRedirect } from "@/features/chat-page/chat-services/chat-thread-service";
 
 export const MainMenu = async () => {
   const user = await getCurrentUser();
@@ -33,9 +35,12 @@ export const MainMenu = async () => {
           <MenuTrayToggle />
         </MenuItemContainer>
         <MenuItemContainer>
+          <form action={CreateChatAndRedirect} className="flex">
+              <NewChat IconOnly={true} />
+          </form>
           <MenuItem tooltip="Chat">
             <MenuLink href="/chat" ariaLabel="Go to the Chat page">
-              <MessageCircle {...menuIconProps} />
+              <MessageCircleCode {...menuIconProps} />
             </MenuLink>
           </MenuItem>
           <MenuItem tooltip="Persona">

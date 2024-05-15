@@ -6,7 +6,7 @@ export const ChatMenuHeader = () => {
   return (
     <div className="flex p-2 px-3 justify-end">
       <form action={CreateChatAndRedirect} className="flex gap-2 pr-3">
-        <NewChat />
+        <NewChat IconOnly={false}  />
         <ChatContextMenu />
       </form>
     </div>
